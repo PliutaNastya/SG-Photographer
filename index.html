@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>SG Photographer</title>
+	<script>
+		document.addEventListener('DOMContentLoaded',()=>{
+		let menuBtn = document.querySelector('.navbar__burger');
+		let menuBtnOpacity = document.querySelector('.icon_burger');
+		let menu = document.querySelector('.navbar__menu');
+		let iconSearchLine = document.querySelector('.navbar__link_search')
+		let searchLine = document.querySelector('.navbar__search');
+		let iconSearchLineOpacity = document.querySelector('.icon_search')
+		menuBtn.addEventListener('click', function(){
+			menuBtn.classList.toggle('active');
+			menu.classList.toggle('active');
+			menuBtnOpacity.classList.toggle('active');
+		})
+		iconSearchLine.addEventListener('click', function(){
+			searchLine.classList.toggle('show');
+			iconSearchLine.classList.toggle('show');
+			iconSearchLineOpacity.classList.toggle('show');
+		}
+		)
+	})
+	</script>
+</head>
+<body>
+    <div class="wrapper">
+		<header class="header" id="AboutMe">
+			<div class="header__navbar navbar container">
+				<div class="navbar__burger">
+					<span class="icon icon_burger"></span>
+				</div>
+				<a href="#" class="navbar__logo">
+					<img src="assets/header/header__logo.png" alt="Logotip">
+				</a>
+				<nav class="navbar__menu menu">
+					<a href="#AboutMe" class="menu__item">Обо мне</a>
+						<a href="#Portfolio" class="menu__item">Портфолио</a>
+						<a href="#Services" class="menu__item">Услуги</a>
+						<a href="#Contacts" class="menu__item">Контакты</a>
+				</nav>
+				<div class="navbar__social">
+					<a href="#" class="navbar__link navbar__link_search">
+						<span class="icon icon_search"></span>
+					</a>
+					<form action="#" class="navbar__search">
+						<input type="text" class="navbar__search-line" placeholder="Поиск...">
+					</form>
+					<a href="#" class="navbar__link">
+						<span class="icon icon_vk"></span>
+					</a>
+					<a href="#" class="navbar__link">
+						<span class="icon icon_fb"></span>
+					</a>
+					<a href="#" class="navbar__link">
+						<span class="icon icon_insta"></span>
+					</a>
+				</div>
+			</div>
+			<div class="header__cover">
+				<img src="assets/header/header__cover.jpg" alt="Cover">
+				<div class="header__container container">
+					<div class="header__insert">
+						<h1 class="header__title">Свадебная фотосессия</h1>
+						<div class="header__date">02.10.2016</div>
+						<button class="header__button">Подробнее</button>
+					</div>
+					<div class="header__arrow">
+						<span class="icon icon_left"></span>
+						<span class="icon icon_right"></span>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="content">
+			<section class="portfolio container" id="Portfolio">
+				<h2 class="portfolio__title title">Портфолио</h2>
+				<div class="portfolio__grid">
+					<div class="portfolio__image">
+						<img src="assets/portfolio/portfolio_1.jpg" alt="Portfolio photo #1">
+						<div class="portfolio__overlay">
+							<h3 class="portfolio__overlay-title">Детская съемка</h3>
+							<div class="portfolio__overlay-date">16.09.2016</div>
+							<button class="portfolio__overlay-button">Подробнее</button>
+						</div>
+					</div>
+					<div class="portfolio__image">
+						<img src="assets/portfolio/portfolio_2.jpg" alt="Portfolio photo #2">
+						<div class="portfolio__overlay">
+							<h3 class="portfolio__overlay-title">Детская съемка</h3>
+							<div class="portfolio__overlay-date">16.09.2016</div>
+							<button class="portfolio__overlay-button">Подробнее</button>
+						</div>
+					</div>
+					<div class="portfolio__image">
+						<img src="assets/portfolio/portfolio_3.jpg" alt="Portfolio photo #3">
+						<div class="portfolio__overlay">
+							<h3 class="portfolio__overlay-title">Детская съемка</h3>
+							<div class="portfolio__overlay-date">16.09.2016</div>
+							<button class="portfolio__overlay-button">Подробнее</button>
+						</div>
+					</div>
+					<div class="portfolio__image">
+						<img src="assets/portfolio/portfolio_4.jpg" alt="Portfolio photo #4">
+						<div class="portfolio__overlay">
+							<h3 class="portfolio__overlay-title">Детская съемка</h3>
+							<div class="portfolio__overlay-date">16.09.2016</div>
+							<button class="portfolio__overlay-button">Подробнее</button>
+						</div>
+					</div>
+					<div class="portfolio__image">
+						<img src="assets/portfolio/portfolio_5.jpg" alt="Portfolio photo #5">
+						<div class="portfolio__overlay">
+							<h3 class="portfolio__overlay-title">Детская съемка</h3>
+							<div class="portfolio__overlay-date">16.09.2016</div>
+							<button class="portfolio__overlay-button">Подробнее</button>
+						</div>
+					</div>
+					<div class="portfolio__image">
+						<img src="assets/portfolio/portfolio_6.jpg" alt="Portfolio photo #6">
+						<div class="portfolio__overlay">
+							<h3 class="portfolio__overlay-title">Детская съемка</h3>
+							<div class="portfolio__overlay-date">16.09.2016</div>
+							<button class="portfolio__overlay-button">Подробнее</button>
+						</div>
+					</div>
+					<div class="portfolio__image">
+						<img src="assets/portfolio/portfolio_7.jpg" alt="Portfolio photo #7">
+						<div class="portfolio__overlay">
+							<h3 class="portfolio__overlay-title">Детская съемка</h3>
+							<div class="portfolio__overlay-date">16.09.2016</div>
+							<button class="portfolio__overlay-button">Подробнее</button>
+						</div>
+					</div>
+					<div class="portfolio__image">
+						<img src="assets/portfolio/portfolio_8.jpg" alt="Portfolio photo #8">
+						<div class="portfolio__overlay">
+							<h3 class="portfolio__overlay-title">Детская съемка</h3>
+							<div class="portfolio__overlay-date">16.09.2016</div>
+							<button class="portfolio__overlay-button">Подробнее</button>
+						</div>
+					</div>
+					<div class="portfolio__image">
+						<img src="assets/portfolio/portfolio_9.jpg" alt="Portfolio photo #9">
+						<div class="portfolio__overlay">
+							<h3 class="portfolio__overlay-title">Детская съемка</h3>
+							<div class="portfolio__overlay-date">16.09.2016</div>
+							<button class="portfolio__overlay-button">Подробнее</button>
+						</div>
+					</div>
+					<div class="portfolio__image">
+						<img src="assets/portfolio/portfolio_10.jpg" alt="Portfolio photo #10">
+						<div class="portfolio__overlay">
+							<h3 class="portfolio__overlay-title">Детская съемка</h3>
+							<div class="portfolio__overlay-date">16.09.2016</div>
+							<button class="portfolio__overlay-button">Подробнее</button>
+						</div>
+					</div>
+					<div class="portfolio__image">
+						<img src="assets/portfolio/portfolio_11.jpg" alt="Portfolio photo #11">
+						<div class="portfolio__overlay">
+							<h3 class="portfolio__overlay-title">Детская съемка</h3>
+							<div class="portfolio__overlay-date">16.09.2016</div>
+							<button class="portfolio__overlay-button">Подробнее</button>
+						</div>
+					</div>
+					<div class="portfolio__image">
+						<img src="assets/portfolio/portfolio_12.jpg" alt="Portfolio photo #12">
+						<div class="portfolio__overlay">
+							<h3 class="portfolio__overlay-title">Детская съемка</h3>
+							<div class="portfolio__overlay-date">16.09.2016</div>
+							<button class="portfolio__overlay-button">Подробнее</button>
+						</div>
+					</div>
+				</div>
+				<button class="portfolio__button button">Подробнее</button>
+			</section>
+			<section class="services" id="Services">
+				<div class="services__container container">
+					<h2 class="services__title title">Услуги</h2>
+					<div class="services__grid">
+						<div class="services__item">
+							<span class="icon icon__services icon__services_reportage"></span>
+							<h3 class="services__subtitle">Репортажная съемка</h3>
+						</div>
+						<div class="services__item">
+							<span class="icon icon__services icon__services_portret"></span>
+							<h3 class="services__subtitle">Портретная съемка</h3>
+						</div>
+						<div class="services__item">
+							<span class="icon icon__services icon__services_individual"></span>
+							<h3 class="services__subtitle">Индивидуальная съемка</h3>
+						</div>
+						<div class="services__item">
+							<span class="icon icon__services icon__services_advertising"></span>
+							<h3 class="services__subtitle">Рекламная съемка</h3>
+						</div>
+						<div class="services__item">
+							<span class="icon icon__services icon__services_lovestory"></span>
+							<h3 class="services__subtitle">Love story</h3>
+						</div>
+						<div class="services__item">
+							<span class="icon icon__services icon__services_nude"></span>
+							<h3 class="services__subtitle">Фотосессии в стиле ню</h3>
+						</div>
+						<div class="services__item">
+							<span class="icon icon__services icon__services_studio"></span>
+							<h3 class="services__subtitle">Студийные фотосъемки</h3>
+						</div>
+						<div class="services__item">
+							<span class="icon icon__services icon__services_baby"></span>
+							<h3 class="services__subtitle">Детская фотосъемка</h3>
+						</div>
+						<div class="services__item">
+							<span class="icon icon__services icon__services_character"></span>
+							<h3 class="services__subtitle">Фотосессия образ</h3>
+						</div>
+						<div class="services__item">
+							<span class="icon icon__services icon__services_newborn"></span>
+							<h3 class="services__subtitle">Newborn фотосъемка</h3>
+						</div>
+						<div class="services__item">
+							<span class="icon icon__services icon__services_model"></span>
+							<h3 class="services__subtitle">Model photo</h3>
+						</div>
+						<div class="services__item">
+							<span class="icon icon__services icon__services_wedding"></span>
+							<h3 class="services__subtitle">Wedding in Europe</h3>
+						</div>
+					</div>
+				</div>
+				<div class="services__cover">
+					<img src="assets/services/services__cover.jpg" alt="Cover">
+				</div>
+			</section>
+			<section class="contacts container" id="Contacts">
+				<h2 class="contacts__title title">Контакты</h2>
+				<form action="#" class="contacts__form form">
+					<div class="form__social">
+						<a href="#"><span class="icon icon__contacts icon__contacts_vk"></span></a>
+						<a href="#"><span class="icon icon__contacts icon__contacts_fb"></span></a>
+						<a href="#"><span class="icon icon__contacts icon__contacts_insta"></span></a>
+					</div>
+					<div class="form__block">
+						<h3 class="form__title">Обратная связь</h3>
+						<div class="form__row">
+							<div class="form__input-container form__input-container_1">
+								<input id="FirstName" class="form__input form__input_1" type="text" placeholder=" " />
+								<label for="FirstName" class="form__label">Имя</label>
+							</div>
+							<div class="form__input-container form__input-container_2">
+								<input id="Email" class="form__input form__input_2" type="text" placeholder=" " />
+								<label for="Email" class="form__label">Email/Номер телефона</label>
+							</div>
+						</div>
+						<div class="form__input-container form__input-container_3">
+							<textarea id="TextArea" cols="1" rows="1" class="form__input form__input_3" placeholder=" "></textarea>
+							<label for="TextArea" class="form__label">Текст сообщения</label>
+						</div>
+					</div>
+						<div class="form__button">
+							<div class="form__empty"></div>
+							<input type="submit" value="Отправить" class="button">
+						</div>
+				</form>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__cover">
+				<img src="src/assets/footer/footer__cover.jpg" alt="Cover">
+			</div>
+			<div class="footer__container container">
+				<h2 class="footer__title">Photographer Stanislav Gubkin</h2>
+				<div class="footer__date">2016</div>
+				<div class="footer__making">Сайт изготовлен командой KV soft</div>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

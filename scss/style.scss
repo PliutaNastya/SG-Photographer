@@ -1,0 +1,715 @@
+@font-face {
+    font-family: Bebas Neue Cyrillic Regular;
+    src: url(../fonts/Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+// ----------------VARIABLES--------------------------------------------------------------------------------
+
+$primary-color: #bf3a2b;
+$primary-text-color: #ffffff;
+$secondly-text-color: #000000;
+
+// ----------------BREAKPOINTS------------------------------------------------------------------------------
+
+$xxl-width: 1959.98px;
+$xl-width: 1599.98px;
+$l-width: 1279.98px;
+$md-width: 959.98px;
+$sm-width: 787.98px;
+$s-width: 519.98px;
+
+// ----------------MIXINS-----------------------------------------------------------------------------------
+
+@mixin button($height, $border-color, $color, $bgc, $hover-color, $hover-bgc, $small-height) {
+    height: $height;
+    padding: 0px 20px;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    border: 3px solid $border-color;
+    color: $color;
+    background-color: $bgc;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+    display: inline-block;
+    &:hover{
+        color: $hover-color;
+        background-color: $hover-bgc;
+    }
+    @media (max-width: $sm-width) {
+        height: $small-height;
+    }
+}
+@mixin icon($width, $height) {
+    width: $width;
+    height: $height;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    transition: all 0.5s ease-in-out;
+}
+
+// ----------------RESET STYLES-----------------------------------------------------------------------------
+
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+*, *:before, *:after{
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+:focus, :active {outline: none;}
+a:focus,a:active {outline: none;}
+nav, footer, header, aside {display: block;}
+html, body{
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+font-size: 14px;
+-ms-text-size-adjust: 100%;
+-moz-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%;
+}
+input, button, textarea {font-family: inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding: 0;border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+img{vertical-align: top;}
+h1, h2, h3, h4, h5, h6 {font-size: inherit; font-weight: inherit;}
+
+// -----------------------COMMON STYLES----------------------------------------------------------------------
+
+html, body{
+    font-size: 20px;
+    font-family: Bebas Neue Cyrillic Regular;
+    text-transform: uppercase;
+    line-height: 1.4;
+    letter-spacing: 2.5px;
+    @media (max-width: $xl-width) {
+        font-size: 18px;
+    }
+    @media (max-width: $l-width) {
+        font-size: 16px;
+    }
+    @media (max-width: $md-width) {
+        font-size: 14px;
+    }
+    @media (max-width: $s-width) {
+        font-size: 12px;
+    }
+}
+.wrapper{
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.container{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0px 10px;
+    @media (max-width: $xl-width) {
+        max-width: 1280px;
+    }
+    @media (max-width: $l-width) {
+        max-width: 960px;
+    }
+    @media (max-width: $md-width) {
+        max-width: none;
+    }
+}
+.content{
+    flex: 1 1 auto;
+}
+
+.icon{
+    @include icon(40px, 40px);
+    &_search{
+        background-image: url(../assets/header/icon_search.png);
+        &.show{
+            opacity: 0;
+        }
+    }
+    &_vk{
+        background-image: url(../assets/header/icon_vk.png);
+        &:hover{
+            background-image: url(../assets/header/icon_vk-hover.png);
+        }
+    }
+    &_fb{
+        background-image: url(../assets/header/icon_fb.png);
+        &:hover{
+            background-image: url(../assets/header/icon_fb-hover.png);
+        }
+    }
+    &_insta{
+        background-image: url(../assets/header/icon_insta.png);
+        &:hover{
+            background-image: url(../assets/header/icon_insta-hover.png);
+        }
+    }
+    &_burger{
+        background-image: url(../assets/header/icon_burger.png);
+        &.active{
+            opacity: 0;
+        }
+        @media (min-width: $md-width) {
+            display: none;
+        }
+    }
+    &_left, &_right{
+        @include icon(70px, 70px);
+        @media (max-width: $sm-width) {
+            @include icon(40px, 40px);
+        }
+    }
+    &_left{
+        background-image: url(../assets/header/icon_left.png);
+        margin-right: 20px;
+        &:hover{
+            background-image: url(../assets/header/icon_left-hover.png);
+        }
+    }
+    &_right{
+        background-image: url(../assets/header/icon_right.png);
+        &:hover{
+            background-image: url(../assets/header/icon_right-hover.png);
+        }
+    }
+    &__services{
+        @include icon(125px, 125px);
+        &_reportage{
+            background-image: url(../assets/services/icon_reportage.png);
+        }
+        &_portret{
+            background-image: url(../assets/services/icon_portret.png);
+        }
+        &_individual{
+            background-image: url(../assets/services/icon_individual.png);
+        }
+        &_advertising{
+            background-image: url(../assets/services/icon_advertising.png);
+        }
+        &_lovestory{
+            background-image: url(../assets/services/icon_lovestory.png);
+        }
+        &_nude{
+            background-image: url(../assets/services/icon_nude.png);
+        }
+        &_studio{
+            background-image: url(../assets/services/icon_studio.png);
+        }
+        &_baby{
+            background-image: url(../assets/services/icon_baby.png);
+        }
+        &_character{
+            background-image: url(../assets/services/icon_character.png);
+        }
+        &_newborn{
+            background-image: url(../assets/services/icon_newborn.png);
+        }
+        &_model{
+            background-image: url(../assets/services/icon_model.png);
+        }
+        &_wedding{
+            background-image: url(../assets/services/icon_wedding.png);
+        }
+    }
+    &__contacts{
+        @include icon(160px, 70px);
+    }
+    &__contacts_vk{
+        background-image: url(../assets/contacts/icon__contacts_vk.png);
+        &:hover{
+            background-image: url(../assets/contacts/icon__contacts_vk-hover.png);
+        }
+    }
+    &__contacts_fb{
+        background-image: url(../assets/contacts/icon__contacts_fb.png);
+        &:hover{
+            background-image: url(../assets/contacts/icon__contacts_fb-hover.png);
+        }
+    }
+    &__contacts_insta{
+        background-image: url(../assets/contacts/icon__contacts_insta.png);
+        &:hover{
+            background-image: url(../assets/contacts/icon__contacts_insta-hover.png);
+        }
+    }
+}
+.title{
+    position: relative;
+    margin: 45px 0px;
+    font-size: 2.4rem;
+    text-align: center;
+    display: inline-block;
+    &::before, &::after{
+        position: absolute;
+        top: calc(50% - 35px);
+        @media (max-width: $l-width) {
+            top: 0;
+        }
+    }
+    &::before{
+        content: url("data:image/svg+xml; charset=UTF-8, <svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='70' height='20'><line fill='none' stroke='hsl(6, 63%, 46%)' stroke-width='3' x1='70' x2='20' y1='5' y2='5'/><line fill='none' stroke='black' stroke-width='3' x1='70' x2='0' y1='15' y2='15'/></svg>");
+        left: -80px;
+    }
+    &::after{
+        content: url("data:image/svg+xml; charset=UTF-8, <svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='70' height='20'><line fill='none' stroke='black' stroke-width='3' x1='0' x2='70' y1='5' y2='5'/><line fill='none' stroke='hsl(6, 63%, 46%)' stroke-width='3' x1='0' x2='50' y1='15' y2='15'/></svg>");
+        right: -80px;
+    }
+}
+.button{
+    @include button(70px, $primary-color, $primary-color, #fff, #fff, $primary-color, 50px);
+}
+
+// -------------------------HEADER--------------------------------------------------------------------------
+
+.header{
+    &__navbar{
+        background: #ffffff;
+        @media (max-width: $sm-width) {
+            padding: 0 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            width: 100%;
+        }
+    } 
+    &__container{
+        position: relative;
+    }
+    &__insert{
+        position: absolute;
+        text-align: right;
+        z-index: 80;
+        bottom: 80px;
+        right: 0;
+        color: $primary-text-color;
+        font-size: 3rem;
+        text-shadow: 1px 1px 5px rgb(82, 81, 81);
+        @media (max-width: $l-width) {
+            right: 10px;
+        }
+        @media (max-width: $sm-width) {
+            bottom: 500px;
+            font-size: 2.6rem;
+        }
+    }
+    &__button{
+        @include button(70px, #fff, $primary-color, #fff, #fff, $primary-color, 50px);
+        margin-top: 10px;
+    }
+    &__arrow{
+        position: absolute;
+        bottom: 80px;
+        left: calc(50% - 80px);
+        @media (max-width: $sm-width) {
+            bottom: 450px;
+            left: calc(50% - 50px);
+        }
+    }
+    &__cover{
+        background-image: url(../assets/header/header__cover.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        @media (max-width: $sm-width) {
+            background-size: auto 50%;
+            background-position: center 80px;
+            }
+        img{
+            opacity: 0;
+        }
+    }
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    min-height: 120px;
+    @media (max-width: $md-width) {
+        min-height: 80px;
+    }
+    &__burger{
+        &.active{
+            @include icon(40px, 40px);
+            background-image: url(../assets/header/icon_burger-cancel.png);
+        }
+    }
+    &__logo{
+        margin-right: 100px;
+        @media (max-width: $l-width) {
+            margin-right: 30px;
+        }
+        @media (max-width: $md-width) {
+            margin: 0 auto;
+        }
+        img{
+            height: 100px;
+            @media (max-width: $md-width) {
+                height: 60px;
+            }
+        }
+    }
+    &__menu{
+        flex: 1 1 auto;
+    }
+    &__link{
+        margin-left: 35px;
+        @media (max-width: $l-width) {
+            margin-left: 20px;
+        }
+        &:not(:first-child){
+        @media (max-width: $md-width) {
+            display: none;
+            }
+        }
+        &:first-child{
+            @media (max-width: $md-width) {
+                margin-left: 0px;
+            }
+        }
+    }
+    &__link_search{
+        position: relative;
+        &.show{
+            @include icon(40px, 40px);
+            background-image: url(../assets/header/icon_search-hover.png);
+        }
+    }
+    &__search{
+        display: none;
+        &-line{
+            height: 40px;
+            padding: 0px 20px;
+            font-size: 1rem;
+            border: 3px solid $primary-color;
+            &::placeholder{
+                color: $primary-color;
+                letter-spacing: 3px;
+            }
+            @media (max-width: $s-width){
+                height: 30px;
+            }
+        }
+        &.show{
+            display: block;
+            position: absolute;
+            z-index: 120;
+            top: 120px;
+            @media (max-width: $md-width){
+                right: 10px;
+                top: 80px;
+            }
+        }
+    }
+}
+.menu{
+    @media (max-width: $md-width) {
+        display: none;
+        &.active{
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid #eee;
+            position: absolute;
+            z-index: 110;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
+    }
+    &__item{
+        color: inherit;
+        font-size: 1.5rem;
+        padding: 0px 25px;
+        @media (max-width: $l-width) {
+            padding: 0px 15px;
+        }
+        @media (max-width: $md-width) {
+            line-height: 80px;
+            width: 100%;
+            text-align: center;
+        }
+        &:not(:last-child){
+            @media (max-width: $md-width) {
+                border-bottom: 1px solid rgb(226, 226, 226);
+            }
+        }
+        &:hover{
+            color: $primary-color;
+        }
+    }
+}
+
+// ---------------------------------PORTFOLIO--------------------------------------------------------------
+
+.portfolio{
+    min-height: 100vh;
+    text-align: center;
+    padding: 0px 50px;
+    @media (max-width: $sm-width) {
+        margin-top: -440px;
+    }   
+    @media (max-width: $s-width) {
+        padding: 0px 10px;
+    }
+    &__grid{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    &__image{
+        height: 300px;
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    &__overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 0;
+        width: 100%;
+        opacity: 0;
+        transition: all 0.5s linear;
+        text-align: center;
+        color: #FFFFFF;
+        font-size: 30px;
+        
+        &:hover{
+            height: 100%;
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        &-title{
+            margin-top: 90px;
+        }
+        &-date{
+            margin: 10px 0px;
+        }
+        &-button{
+            @include button(50px, $primary-text-color, #fff, transparent, #000, #fff, 50px);
+        }
+    }
+    &__button{
+        margin: 110px 0px;
+        @media (max-width: $sm-width) {
+            margin: 50px 0px;
+        }
+    }
+}
+
+// --------------------------SERVICES---------------------------------------------------------------------
+
+.services{
+    position: relative;
+    min-height: 100vh;
+    color: $primary-text-color;
+    &__cover{
+        position: absolute;
+        top: 0;
+        background-image: url(../assets/services/services__cover.jpg);
+        min-width: 100%;
+        min-height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        img{
+            display: none;
+        }
+    }
+    &__container{
+        text-align: center;
+        position: relative;
+        z-index: 5;
+        top: 0;
+        padding: 60px 0px;
+    }
+    &__title{
+        margin: 0px 0px 45px 0px;
+        &::before{
+            content: url("data:image/svg+xml; charset=UTF-8, <svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='70' height='20'><line fill='none' stroke='hsl(6, 63%, 46%)' stroke-width='3' x1='70' x2='20' y1='5' y2='5'/><line fill='none' stroke='white' stroke-width='3' x1='70' x2='0' y1='15' y2='15'/></svg>");
+        }
+        &::after{
+            content: url("data:image/svg+xml; charset=UTF-8, <svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='70' height='20'><line fill='none' stroke='white' stroke-width='3' x1='0' x2='70' y1='5' y2='5'/><line fill='none' stroke='hsl(6, 63%, 46%)' stroke-width='3' x1='0' x2='50' y1='15' y2='15'/></svg>");
+        }
+    }
+    &__grid{
+        display: grid;
+        justify-content: center;
+        justify-items: center;
+        column-gap: 100px;
+        row-gap: 140px;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        padding-bottom: 80px;
+        @media (max-width: $l-width) {
+            column-gap: normal;
+        }
+        @media (max-width: $s-width) {
+            row-gap: 80px;
+        }
+    }
+    &__subtitle{
+        font-size: 1.5rem;
+        margin-top: 30px;
+    }
+}
+
+// -----------------------------CONTACTS--------------------------------------------------------------------
+.contacts{
+    text-align: center;
+}
+.form{
+    color: $primary-color;
+    font-size: 1.8rem;
+    width: 100%;
+    display: grid;
+    grid-template: 1fr / 1fr 6fr;
+    gap: 20px;
+    @media (max-width: $sm-width) {
+        grid-template: 1fr / 1fr;
+    }
+    &__social{
+        display: grid;
+        gap: 20px;
+        @media (max-width: $sm-width) {
+            grid-auto-flow: column;
+            justify-content: space-between;
+            
+        }
+        @media (max-width: $s-width) {
+            grid-auto-flow: row;
+            justify-content: center;
+        }
+    }
+    &__block{
+        display: grid;
+        gap: 20px;
+        @media (max-width: $sm-width) {
+            gap: 0;
+        }
+    }
+    &__title{
+        font-size: 2.4rem;
+        text-align: left;
+        @media (max-width: $sm-width) {
+            text-align: center;
+        }
+    }
+    &__row{
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        column-gap: 40px;
+        @media (max-width: $sm-width) {
+            grid-template-columns: 1fr;
+        }
+    }
+    &__input-container{
+        position: relative;
+        width: 100%;
+        text-align: left;
+        &_1, &_2, &_3{
+            margin-top: 50px;
+        }
+    }
+    &__input{
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        border-bottom: 3px solid $primary-color;
+        width: 100%;
+        &_1{
+            @media (max-width: $sm-width) {
+                width: 50%;
+            }
+        }
+        &_2{
+            @media (max-width: $sm-width) {
+                width: 70%;
+            }
+        }
+        &_1, &_2{
+            @media (max-width: $s-width) {
+                width: 100%;
+            }
+        }
+        &_3{
+            resize: none;
+        }
+    }
+    &__label{
+        position: absolute;
+        top: -10px;
+        left: 0;
+        transition: transform 500ms;
+    }
+    &__input:focus ~ &__label, &__input:not(:placeholder-shown) ~ &__label{
+        transform: translateY(-30px);
+    }
+    &__button{
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: 5fr 1fr;
+        margin-top: 20px;
+        @media (max-width: $sm-width) {
+            grid-column: auto;
+        }
+        @media (max-width: $md-width) {
+            grid-template-columns: 2fr 1fr 2fr;
+        }
+    }
+}
+
+// ------------------------FOOTER--------------------------------------------------------------------------
+
+.footer{
+    margin-top: 50px;
+    position: relative;
+    min-height: 130px;
+    color: $primary-text-color;
+    font-size: 1.4rem;
+    &__cover{
+        position: absolute;
+        top: 0;
+        background-image: url(../assets/footer/footer__cover.jpg);
+        min-width: 100%;
+        min-height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        img{
+            display: none;
+        }
+    }
+    &__container{
+        padding: 40px 0px;
+        text-align: center;
+        position: relative;
+        z-index: 5;
+    }
+    &__title{
+        font-size: 2rem;
+    }
+}
