@@ -19,7 +19,7 @@ $xl-width: 1599.98px;
 $l-width: 1279.98px;
 $md-width: 959.98px;
 $sm-width: 787.98px;
-$s-width: 519.98px;
+$s-width: 479.98px;
 
 // ----------------MIXINS-----------------------------------------------------------------------------------
 
@@ -163,25 +163,6 @@ html, body{
         }
         @media (min-width: $md-width) {
             display: none;
-        }
-    }
-    &_left, &_right{
-        @include icon(70px, 70px);
-        @media (max-width: $sm-width) {
-            @include icon(40px, 40px);
-        }
-    }
-    &_left{
-        background-image: url(../assets/header/icon_left.png);
-        margin-right: 20px;
-        &:hover{
-            background-image: url(../assets/header/icon_left-hover.png);
-        }
-    }
-    &_right{
-        background-image: url(../assets/header/icon_right.png);
-        &:hover{
-            background-image: url(../assets/header/icon_right-hover.png);
         }
     }
     &__services{
